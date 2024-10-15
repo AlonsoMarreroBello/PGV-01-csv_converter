@@ -1,5 +1,7 @@
 .vscode
 bin
 lib
+data
 
 *.class
+*.log
