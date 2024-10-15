@@ -47,7 +47,7 @@ public class App {
             }
             String filename = string.replaceAll(" ", "");
             Process process = ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", data,
-                outputRoute + filename + ".txt",
+                outputRoute + "/" + filename + ".txt",
                 ERROR_ROUTE + filename + "_err.log");
             processes.add(process);
           }
