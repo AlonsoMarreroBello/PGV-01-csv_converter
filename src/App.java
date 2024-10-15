@@ -69,6 +69,7 @@ public class App {
         ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", formattedData, outputPath,
             ERROR_ROUTE + "people_err.log");
         System.out.printf("Se han guardado los datos en " + outputPath + " ! :D");
+
         break;
       default:
         break;
