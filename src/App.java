@@ -38,15 +38,15 @@ public class App {
         ArrayList<Process> processes = new ArrayList<>();
         for (String string : segregatedData.keySet()) {
           if (string.trim() != characteristic) {
-            String data = "";
-            for (String charasteristic : characteristics) {
-              data += charasteristic + ",";
-            }
+            StringBuilder data = new StringBuilder();
             for (String setData : segregatedData.get(string)) {
-              data += "\n" + setData;
+              data.append(setData).append("\n");
+            }
+            if (data.length() > 0) {
+              data.setLength(data.length() - 1);
             }
             String filename = string.replaceAll(" ", "");
-            Process process = ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", data,
+            Process process = ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", data.toString(),
                 outputRoute + "/" + filename + ".txt",
                 ERROR_ROUTE + filename + "_err.log");
             processes.add(process);
@@ -60,7 +60,7 @@ public class App {
         System.out.println("Introduzca la ruta de la carpeta");
         String folderRoute = SC.nextLine();
         ArrayList<String> dataFolder = DataExtractor.getDataFromTxt(folderRoute);
-        System.out.println("Introduzca la ruta de salida");
+        System.out.println("Introduzca la ruta de salida junto con el nombre del archivo csv");
         String outputPath = SC.nextLine();
 
         String formattedData = DataFormatter.formatDataToCSV(dataFolder);
