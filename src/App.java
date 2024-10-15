@@ -55,6 +55,7 @@ public class App {
         for (Process process : processes) {
           process.waitFor();
         }
+        System.out.printf("Se han guardado los datos en " + outputRoute + " ! :D");
         break;
       case "2":
         System.out.println("Introduzca la ruta de la carpeta");
@@ -67,6 +68,7 @@ public class App {
 
         ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", formattedData, outputPath,
             ERROR_ROUTE + "people_err.log");
+        System.out.printf("Se han guardado los datos en " + outputPath + " ! :D");
         break;
       default:
         break;

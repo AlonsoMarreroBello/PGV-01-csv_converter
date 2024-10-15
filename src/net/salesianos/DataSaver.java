@@ -9,7 +9,6 @@ public class DataSaver {
     String outputRoute = args[1];
     try (BufferedWriter bWritter = new BufferedWriter(new FileWriter(outputRoute))) {
       bWritter.write(args[0]);
-      System.out.println("Se han guardado los datos! :D");
     } catch (Exception e) {
       e.printStackTrace();
     }
