@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class ProcessLauncher {
 
-  public static Process startProccess(String route, String data, String output, String errorRoute)
+  public static Process startProcess(String route, String data, String output, String errorRoute)
       throws IOException {
     ProcessBuilder processBuilder = new ProcessBuilder("java",
         route, data, output);
