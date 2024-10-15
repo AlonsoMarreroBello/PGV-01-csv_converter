@@ -24,7 +24,6 @@ public class DataSegregator {
     for (String person : data) {
       String[] splitedPerson = person.split(",");
       if (!splitedPerson[characteristicIndex].equals(characteristic)) {
-        System.out.println(splitedPerson[characteristicIndex]);
         Set<String> people = segregatedPopulation.computeIfAbsent(splitedPerson[characteristicIndex],
             k -> new HashSet<>());
         people.add(person);
