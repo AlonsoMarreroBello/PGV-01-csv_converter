@@ -17,4 +17,20 @@ public class DataExtractor {
     bReader.close();
     return dataList;
   }
+
+  public static ArrayList<String> getDataFromTxt(String folderRoute) throws IOException {
+    File folder = new File(folderRoute);
+    File[] listOfFiles = folder.listFiles();
+
+    ArrayList<String> fileData = new ArrayList<>();
+    for (File file : listOfFiles) {
+      try (BufferedReader bReader = new BufferedReader(new FileReader("data\\inputs\\" + file.getName()))) {
+        String line = "";
+        while ((line = bReader.readLine()) != null) {
+          fileData.add(line);
+        }
+      }
+    }
+    return fileData;
+  }
 }
