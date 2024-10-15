@@ -21,7 +21,12 @@ public class DataFormatter {
       String replaceData = String.valueOf(chars);
       body += replaceData + "\n";
     }
-    String csvContent = header + body;
+
+    StringBuilder newBody = new StringBuilder(body);
+    if (newBody.length() > 0) {
+      newBody.setLength(newBody.length() - 1);
+    }
+    String csvContent = header + newBody.toString();
     return csvContent;
   }
 }
