@@ -13,12 +13,7 @@ public class DataFormatter {
         if (!found && Character.isLetter(chars[j])) {
           chars[j] = Character.toUpperCase(chars[j]);
           found = true;
-        } else if (Character.isWhitespace(chars[j]) || chars[j] == '.' || chars[j] == '\'' || chars[j] == ',') { // You
-                                                                                                                 // can
-                                                                                                                 // add
-                                                                                                                 // other
-                                                                                                                 // chars
-          // here
+        } else if (Character.isWhitespace(chars[j]) || chars[j] == '.' || chars[j] == '\'' || chars[j] == ',') {
           found = false;
         }
       }

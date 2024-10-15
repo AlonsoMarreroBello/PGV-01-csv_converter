@@ -66,7 +66,7 @@ public class App {
         String formattedData = DataFormatter.formatDataToCSV(dataFolder);
 
         ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", formattedData, outputPath,
-            ERROR_ROUTE + "people_err.txt");
+            ERROR_ROUTE + "people_err.log");
         break;
       default:
         break;
