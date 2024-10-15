@@ -24,7 +24,7 @@ public class DataExtractor {
 
     ArrayList<String> fileData = new ArrayList<>();
     for (File file : listOfFiles) {
-      try (BufferedReader bReader = new BufferedReader(new FileReader("data\\inputs\\" + file.getName()))) {
+      try (BufferedReader bReader = new BufferedReader(new FileReader(folderRoute + "/" + file.getName()))) {
         String line = "";
         while ((line = bReader.readLine()) != null) {
           fileData.add(line);
