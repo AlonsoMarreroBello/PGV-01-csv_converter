@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import net.salesianos.DataExtractor;
+import net.salesianos.DataFormatter;
 import net.salesianos.DataSegregator;
 import net.salesianos.utils.Menu;
 import net.salesianos.utils.ProcessLauncher;
@@ -56,7 +57,16 @@ public class App {
         }
         break;
       case "2":
+        System.out.println("Introduzca la ruta de la carpeta");
+        String folderRoute = SC.nextLine();
+        ArrayList<String> dataFolder = DataExtractor.getDataFromTxt(folderRoute);
+        System.out.println("Introduzca la ruta de salida");
+        String outputPath = SC.nextLine();
 
+        String formattedData = DataFormatter.formatDataToCSV(dataFolder);
+
+        ProcessLauncher.startProcess("src\\net\\salesianos\\DataSaver.java", formattedData, outputPath,
+            ERROR_ROUTE + "people_err.txt");
         break;
       default:
         break;
